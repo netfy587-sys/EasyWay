@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let Your Skin Grow Up First — A Teen Skin Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:        #F5F2E8;
+    --bg-soft:   #ECE7D6;
+    --ink:       #262A20;
+    --ink-soft:  #58604E;
+    --sage:      #64765A;
+    --sage-dark: #3C4632;
+    --clay:      #C57853;
+    --clay-soft: #E7B79A;
+    --line:      rgba(38,42,32,0.14);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+  }
+
+  p{ margin:0 0 1em; max-width:60ch; color:var(--ink-soft); }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+
+  /* ---- top bar ---- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:1080px; margin:0 auto; padding:26px 32px;
+  }
+  .topbar .mark{ font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem; }
+  .topbar .mark span{ color:var(--sage); }
+  .topbar .note{
+    font-size:0.82rem; color:var(--ink-soft);
+    border:1px solid var(--line); padding:6px 14px; border-radius:999px;
+  }
+
+  /* ---- hero ---- */
+  .hero{ padding:36px 0 80px; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.6vw, 3.6rem);
+    line-height:1.12;
+  }
+  .hero h1 em{ font-style:italic; color:var(--sage); }
+  .hero p.lede{ font-size:1.1rem; margin-top:22px; }
+  .hero-figure{ position:relative; }
+  .hero-figure img{
+    width:100%; height:420px; object-fit:cover; border-radius:12px 60px 12px 12px;
+  }
+  .hero-figure figcaption{
+    font-size:0.8rem; color:var(--ink-soft); margin-top:10px;
+  }
+  .hero-tags{ display:flex; gap:10px; margin-top:28px; flex-wrap:wrap; }
+  .hero-tags span{
+    font-size:0.82rem; color:var(--sage-dark);
+    background:var(--bg-soft); border-radius:999px; padding:6px 14px;
+  }
+
+  /* ---- section scaffolding ---- */
+  section.block{ padding:80px 0; border-top:1px solid var(--line); }
+  section.block.soft{ background:var(--bg-soft); }
+
+  .block-head{ max-width:640px; margin:0 auto 48px; text-align:center; }
+  .block-head .kicker{ font-size:0.82rem; color:var(--clay); margin-bottom:10px; }
+  .block-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:14px; }
+  .block-head p{ margin:0 auto; }
+
+  /* ---- feature row (image + text) ---- */
+  .feature{
+    display:grid; grid-template-columns: 0.9fr 1.1fr; gap:52px; align-items:center;
+  }
+  .feature.reverse{ grid-template-columns: 1.1fr 0.9fr; }
+  .feature.reverse .feature-media{ order:2; }
+  .feature-media img{
+    width:100%; height:320px; object-fit:cover; border-radius:10px;
+  }
+  .feature-media figcaption{ font-size:0.8rem; color:var(--ink-soft); margin-top:10px; }
+  .feature-text h3{ font-size:1.5rem; margin-bottom:14px; }
+  .feature-text ul{ padding-left:20px; margin:16px 0 0; color:var(--ink-soft); }
+  .feature-text li{ margin-bottom:9px; }
+
+  /* ---- myth / reality strip ---- */
+  .myth-list{ display:flex; flex-direction:column; gap:26px; max-width:820px; margin:0 auto; }
+  .myth{
+    display:grid; grid-template-columns: 220px 1fr; gap:26px;
+    border-bottom:1px solid var(--line); padding-bottom:26px;
+  }
+  .myth:last-child{ border-bottom:none; }
+  .myth .say{
+    font-family:'Fraunces', serif; font-style:italic; font-size:1.05rem;
+    color:var(--clay);
+  }
+  .myth .truth{ color:var(--ink-soft); margin:0; }
+  .myth .truth strong{ color:var(--ink); font-weight:600; }
+
+  @media (max-width:720px){
+    .myth{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  /* ---- growth stages (skin changes through the teen years) ---- */
+  .stages{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap:28px;
+  }
+  .stage{
+    background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:26px;
+  }
+  section.block.soft .stage{ background:#fff; }
+  .stage .age{ font-family:'Fraunces', serif; font-style:italic; color:var(--sage); margin-bottom:8px; }
+  .stage h3{ font-size:1.15rem; margin-bottom:10px; }
+  .stage p{ margin:0; font-size:0.96rem; }
+
+  @media (max-width:820px){
+    .stages{ grid-template-columns:1fr; }
+    .feature, .feature.reverse{ grid-template-columns:1fr; }
+    .feature.reverse .feature-media{ order:0; }
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---- do this instead ---- */
+  .todo-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:22px;
+  }
+  .todo{
+    background:#fff; border-radius:10px; padding:24px 26px; border:1px solid var(--line);
+  }
+  .todo .num{ color:var(--clay); font-family:'Fraunces', serif; font-style:italic; font-size:1rem; margin-bottom:8px; display:block; }
+  .todo h3{ font-size:1.1rem; margin-bottom:8px; }
+  .todo p{ margin:0; font-size:0.95rem; }
+
+  @media (max-width:720px){ .todo-grid{ grid-template-columns:1fr; } }
+
+  /* ---- middle ground callout ---- */
+  .callout{
+    max-width:760px; margin:0 auto; text-align:center;
+    background:var(--sage-dark); color:#F4F1E6; border-radius:16px; padding:44px 40px;
+  }
+  .callout h2{ color:#F4F1E6; font-size:1.7rem; margin-bottom:16px; }
+  .callout p{ color:#DCE1D2; margin:0 auto; }
+
+  /* ---- closing ---- */
+  .closing{ padding:90px 0 60px; text-align:center; }
+  .closing h2{ font-size:clamp(1.7rem,3.2vw,2.4rem); max-width:680px; margin:0 auto 18px; }
+  .closing p{ margin:0 auto; }
+
+  footer{ border-top:1px solid var(--line); padding:30px 0 40px; }
+  footer .wrap{
+    display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between;
+    font-size:0.8rem; color:var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="mark">let skin <span>grow up</span> first</div>
+    <div class="note">A skin-health read for teens &amp; parents</div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Your skin is still <em>writing its first draft</em>. Let it.</h1>
+          <p class="lede">Somewhere between ages 12 and 19, skin goes through more change than at almost any other point in life. Oil glands switch on, hormones swing, and the skin barrier is still learning how to protect itself. Covering all of that up with makeup, every day, doesn't pause the process — it just complicates it. Here's the actual reasoning, without the lecture.</p>
+          <div class="hero-tags">
+            <span>Hormonal skin</span>
+            <span>Clogged pores</span>
+            <span>Skin barrier</span>
+            <span>Self-image</span>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Human_skin_close-up.jpg?width=900" alt="Close-up macro photograph of healthy human skin texture" loading="lazy">
+          <figcaption>Bare skin, seen up close — texture, pores, and all. This is what makeup sits on top of every day.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- STAGES -->
+  <section class="block soft">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="kicker">First, the biology</div>
+        <h2>What's actually happening under there</h2>
+        <p>Teenage skin isn't just "younger" adult skin. It's going through distinct, hormone-driven changes that most makeup wasn't designed to work around.</p>
+      </div>
+      <div class="stages">
+        <div class="stage">
+          <div class="age">Early teens</div>
+          <h3>Oil glands wake up</h3>
+          <p>Rising hormones enlarge sebaceous glands and increase oil production, often before skin has learned to regulate it — a normal, temporary phase.</p>
+        </div>
+        <div class="stage">
+          <div class="age">Mid teens</div>
+          <h3>Breakouts become common</h3>
+          <p>Excess oil mixes with dead skin cells and can block pores, which is why acne peaks for most people during these years, not before or after.</p>
+        </div>
+        <div class="stage">
+          <div class="age">Later teens</div>
+          <h3>The skin barrier is still forming</h3>
+          <p>The outer barrier that keeps irritants out and moisture in keeps maturing into the late teens, which is why skin can react more easily to new products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 1: clogging -->
+  <section class="block">
+    <div class="wrap">
+      <div class="feature">
+        <figure class="feature-media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Image_skin_texture.jpg?width=900" alt="Macro photograph showing detailed human skin pores and texture" loading="lazy">
+          <figcaption>Pores at this stage of life are already working overtime — a heavy layer on top adds to that load.</figcaption>
+        </figure>
+        <div class="feature-text">
+          <h3>Makeup can trap what skin is trying to push out</h3>
+          <p>Oily, acne-prone skin is already producing more sebum than it can easily clear. Foundation, concealer, and powder — however lightweight — sit directly on top of that activity.</p>
+          <ul>
+            <li>Thicker, oil-based formulas can physically block already-congested pores.</li>
+            <li>A layer on the skin traps sweat and bacteria closer to the surface for longer.</li>
+            <li>Daily buildup, if not removed thoroughly, compounds night after night.</li>
+            <li>This doesn't cause acne on its own, but it can make an existing breakout last longer or spread.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 2: masking -->
+  <section class="block soft">
+    <div class="wrap">
+      <div class="feature reverse">
+        <figure class="feature-media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Woman_steaming_her_face_in_Mochudi.jpg?width=900" alt="A woman caring for her skin with steam over a basin" loading="lazy">
+          <figcaption>Actually treating skin takes longer than covering it — but it's the only version that works long-term.</figcaption>
+        </figure>
+        <div class="feature-text">
+          <h3>Covering a problem isn't the same as treating it</h3>
+          <p>Concealer hides a breakout for a few hours. It doesn't calm inflammation, reduce oil, or heal anything underneath — and it's easy to mistake "hidden" for "handled."</p>
+          <ul>
+            <li>A covered-up breakout can go untreated for weeks because it's simply not being looked at.</li>
+            <li>Persistent or painful acne is a reason to see a doctor or dermatologist, not a reason to reach for more coverage.</li>
+            <li>Real improvement — cleansing, moisturizing, sun protection, and sometimes medical treatment — takes patience that makeup can't shortcut.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYTHS -->
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="kicker">Common assumptions</div>
+        <h2>What people say, and what's actually true</h2>
+      </div>
+      <div class="myth-list">
+        <div class="myth">
+          <div class="say">"Makeup will hide my acne so I feel better."</div>
+          <p class="truth"><strong>Short-term, maybe. Long-term, rarely.</strong> Hiding a breakout can ease that day's self-consciousness, but relying on it daily often means the underlying skin issue — and the feelings about it — never actually get addressed.</p>
+        </div>
+        <div class="myth">
+          <div class="say">"If it's labeled for sensitive skin, it's automatically fine."</div>
+          <p class="truth"><strong>Labels help, but skin still reacts individually.</strong> Teenage skin's barrier is still developing, so a formula that suits an adult can still cause irritation, breakouts, or an allergic reaction in a younger user.</p>
+        </div>
+        <div class="myth">
+          <div class="say">"Everyone my age already wears it, so it must be fine."</div>
+          <p class="truth"><strong>Popularity isn't the same as suitability.</strong> A trend spreading through a friend group or social media says nothing about whether it's a good fit for your specific, still-changing skin.</p>
+        </div>
+        <div class="myth">
+          <div class="say">"A little bit every day can't really matter."</div>
+          <p class="truth"><strong>It's less about one day and more about the pattern.</strong> Occasional light use is very different from a daily habit that never gives skin a break to breathe and repair overnight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYGIENE -->
+  <section class="block soft">
+    <div class="wrap">
+      <div class="feature">
+        <figure class="feature-media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clean_sponge.jpg?width=900" alt="A clean sponge, representing the tools used to apply and blend products onto skin" loading="lazy">
+          <figcaption>Any applicator — sponge, brush, or fingers — needs regular, thorough cleaning to stay safe on skin.</figcaption>
+        </figure>
+        <div class="feature-text">
+          <h3>The tools matter as much as the product</h3>
+          <p>Brushes, sponges, and fingers all pick up bacteria the moment they touch skin — and teenagers are more likely to share products or reuse applicators without realizing the risk.</p>
+          <ul>
+            <li>Unwashed sponges and brushes can reintroduce bacteria to freshly cleaned skin.</li>
+            <li>Sharing lip products, brushes, or compacts with friends spreads bacteria and, occasionally, infections.</li>
+            <li>Product left in a bag or locker in heat can change texture and harbor bacteria faster than at home.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUN -->
+  <section class="block">
+    <div class="wrap">
+      <div class="feature reverse">
+        <figure class="feature-media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Young_Woman_in_Sun_Hat.jpg?width=900" alt="A young woman wearing a wide-brimmed sun hat outdoors" loading="lazy">
+          <figcaption>A hat and shade do more for teenage skin than a tinted layer with sun protection buried far down the ingredient list.</figcaption>
+        </figure>
+        <div class="feature-text">
+          <h3>Sun protection matters more than coverage</h3>
+          <p>Most of a person's lifetime sun exposure happens before age twenty. That makes daily sun protection the single most useful habit a teenager can build — far more useful than concealer.</p>
+          <ul>
+            <li>Many tinted products contain too little SPF to protect skin on their own.</li>
+            <li>Sunscreen needs reapplying through the day, which a base layer of makeup makes inconvenient.</li>
+            <li>Early, consistent sun protection is one of the clearest ways to keep skin healthier for decades.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELF IMAGE -->
+  <section class="block soft">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="kicker">Beyond the skin itself</div>
+        <h2>What it can do to how you see yourself</h2>
+        <p>Skin health is only half of this. The other half is what a daily habit of "fixing" your face before anyone sees it can quietly teach you to believe.</p>
+      </div>
+      <div class="todo-grid">
+        <div class="todo">
+          <span class="num">First</span>
+          <h3>A comparison you didn't ask to join</h3>
+          <p>Filtered photos and edited videos set a standard no real face — teenage or otherwise — actually meets. Daily makeup use, chasing that standard, can quietly reinforce the idea that your bare face isn't enough.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Then</span>
+          <h3>A habit that's hard to put down</h3>
+          <p>Some teens describe real anxiety about being seen without makeup — at a sleepover, in gym class, on a video call. That discomfort is worth noticing early, before it hardens into a rule you feel you can't break.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Also</span>
+          <h3>Time and money, every single day</h3>
+          <p>A daily routine adds up — in minutes before school and in money spent replacing products — for a benefit that's mostly cosmetic and mostly temporary.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Worth asking</span>
+          <h3>Whose choice is it, really?</h3>
+          <p>There's a real difference between choosing to wear makeup for a specific occasion and feeling like you have to, every day, to be seen as acceptable. Only one of those is actually a choice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIDDLE GROUND -->
+  <section class="block">
+    <div class="wrap">
+      <div class="callout">
+        <h2>This isn't a rule against ever wearing it</h2>
+        <p>Light makeup for a school function, a performance, or a photo isn't the concern here. The concern is a daily, heavy, unquestioned habit during the exact years skin is least equipped to handle it — and the exact years self-image is still being built. Occasional and intentional is a very different thing from constant and automatic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO DO INSTEAD -->
+  <section class="block soft">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="kicker">In the meantime</div>
+        <h2>What actually helps teenage skin</h2>
+        <p>None of this requires a complicated routine. A few consistent basics do more for skin at this age than any product applied on top.</p>
+      </div>
+      <div class="todo-grid">
+        <div class="todo">
+          <span class="num">Basic</span>
+          <h3>A gentle cleanser, twice a day</h3>
+          <p>Washing morning and night — without scrubbing — clears oil and buildup without stripping skin dry.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Basic</span>
+          <h3>A light, oil-free moisturizer</h3>
+          <p>Even oily skin needs hydration; skipping it often triggers even more oil production to compensate.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Basic</span>
+          <h3>Sunscreen, daily, rain or shine</h3>
+          <p>This one habit does more long-term good for skin than almost anything else on this list.</p>
+        </div>
+        <div class="todo">
+          <span class="num">Basic</span>
+          <h3>A dermatologist for anything persistent</h3>
+          <p>Ongoing or painful acne responds far better to an actual treatment plan than to daily concealment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Skin only gets one adolescence. Give it room to have it.</h2>
+      <p style="margin-left:auto;margin-right:auto;">None of this is about shame — plenty of teens wear makeup and are completely fine, and plenty of skin trouble happens with or without it. The point is simpler: the teenage years are a short, specific window where skin is doing serious, necessary work. Understanding that makes it easier to decide, on your own terms, what you actually want to put on top of it.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>General information, not medical advice — for persistent or painful skin concerns, please see a doctor or dermatologist.</span>
+      <span>Photographs via Wikimedia Commons, used under their respective Creative Commons and public-domain licenses. Not affiliated with or promoting any brand.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
